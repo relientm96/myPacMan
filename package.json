@@ -1,0 +1,23 @@
+{
+  "name": "mypacman",
+  "version": "1.0.0",
+  "description": "Pacman game recreated with Phaser.js and Express.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/relientm96/myPacMan.git"
+  },
+  "author": "Matthew Yong",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/relientm96/myPacMan/issues"
+  },
+  "homepage": "https://github.com/relientm96/myPacMan#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
