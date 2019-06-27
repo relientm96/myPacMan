@@ -1,27 +1,18 @@
 var config = {
-    type: Phaser.AUTO,
+    type: Phaser.CANVAS,
     width: window.innerWidth,
     height: window.innerHeight,
     scale: {
         mode: Phaser.Scale.FIT,
     },
-    scene: {
-      preload: preload,
-      create: create,
-      update: update
-    }
+    physics: {
+      default: 'arcade',
+      arcade: {
+          gravity: { y: 200 }
+      }
+    },
+    scene: [ levelOne ],
+    title: 'Pacman Recreated!',
   };
   
 var game = new Phaser.Game(config);
-
-function preload() {
-    this.load.image('pacman', 'assets/pacman.png');
-}
-
-function create() {
-    this.add.image(window.innerWidth/2, window.innerHeight/2, 'pacman');
-}
-
-function update() {
-
-}
