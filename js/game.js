@@ -15,7 +15,9 @@ var config = {
 var game = new Phaser.Game(config);
 
 function preload() {
-    this.load.image('pacman', 'assets/pacman.png');
+  this.load.spritesheet('pacman', 'assets/pacman.png',{ 
+    frameWidth: 32, frameHeight: 48 
+  });
 }
 
 function create() {
