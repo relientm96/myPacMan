@@ -1,20 +1,35 @@
 /* Entry Point of Program */
 
-var express = require('express');
-var app = express();
+/**
+ * Library Imports
+ */
+const express = require('express');
+const bodyParser = require("body-parser");
+const path = require("path");
+const cors = require("cors");
 
-var PORT = process.env.PORT || 3000;
+/**
+ * App Constants
+ */
+const app = express();
+const PORT = process.env.PORT || 3000;
 
-//Middleware for static files
-app.use('/css', express.static(__dirname + '/css'));
-app.use('/js', express.static(__dirname + '/js'));
-app.use('/assets', express.static(__dirname + '/assets'));
+/**
+ * App middlewares
+ */
+app.use(cors());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(express.static(path.join(__dirname, '/resources')));
 
-//Main Route
+/**
+ * Main Route
+ */
 app.get('/', function(req, res) {
-  res.sendFile(__dirname + '/index.html');
+    res.contentType("text/html");
+    res.sendFile('resources/index.html');
 });
 
 app.listen(PORT, function() {
-  console.log(`Listening :${PORT}`);
+    console.log(`Listening :${PORT}`);
 });
